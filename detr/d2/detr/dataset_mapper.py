@@ -5,9 +5,9 @@ import logging
 import numpy as np
 import torch
 
-from detectron2.data import detection_utils as utils
-from detectron2.data import transforms as T
-from detectron2.data.transforms import TransformGen
+from detr.detectron2.data import detection_utils as utils
+from detr.detectron2.data import transforms as T
+from detr.detectron2.data.transforms import TransformGen
 
 __all__ = ["DetrDatasetMapper"]
 
