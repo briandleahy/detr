@@ -13,8 +13,11 @@ import numpy as np
 import torch
 
 from pycocotools.cocoeval import COCOeval
-from pycocotools.coco import COCO
-import pycocotools.mask as mask_util
+try:
+    from pycocotools.coco import COCO
+    import pycocotools.mask as mask_util
+except ModuleNotFoundError:
+    print("pycocotools not found; some functionality may be missing")
 
 from detr.util.misc import all_gather
 

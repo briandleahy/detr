@@ -6,7 +6,10 @@ import numpy as np
 import torch
 from PIL import Image
 
-from panopticapi.utils import rgb2id
+try:
+    from panopticapi.utils import rgb2id
+except ModuleNotFoundError:
+    print("panopticapi not found; some functionality may be missing")
 from util.box_ops import masks_to_boxes
 
 from detr.datasets.coco import make_coco_transforms

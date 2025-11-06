@@ -9,7 +9,10 @@ from pathlib import Path
 import torch
 import torch.utils.data
 import torchvision
-from pycocotools import mask as coco_mask
+try:
+    from pycocotools import mask as coco_mask
+except ModuleNotFoundError:
+    print("pycocotools not found; some functionality may be missing")
 
 import detr.datasets.transforms as T
 
